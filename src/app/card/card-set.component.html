@@ -1,0 +1,45 @@
+<div class="card-set">
+  <div class="card-list">
+    <div class="card-pic">
+    </div>
+    <div class="card-info">
+      <select class="card-select" name="selectCard" [(ngModel)]="selectedCard">
+        <option *ngFor="let card of cards" [ngValue]="card">{{card.name}}</option>
+      </select>
+      <div  class="card-id" *ngIf="selectedCard">
+        <span>{{selectedCard.cardId}}</span>
+        <a class="card-manage">Manage Cards</a>
+      </div>
+    </div>
+  </div>
+<div *ngIf="selectedCard">
+  <h3>Available Limit</h3>
+  <div class="available-limit fon-bold">{{selectedCard.availableLimit}}/{{selectedCard.limit}}</div>
+  <form>
+  <table class="table">
+    <tbody>
+    <tr>
+      <td class="font-grey font-left fon-bold">Limit Increase</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td class="font-grey font-left">Maximum Increase Amount</td>
+      <td class="font-blue font-right">${{selectedCard.maxLimit}}</td>
+    </tr>
+    <tr>
+      <td class="font-grey font-left">
+        <label for="newLimit">Increase Limit To：</label>
+      </td>
+      <td class="font-blue font-right">
+        <input id="newLimit" name="newLimit" type="number" class="form-input"
+               required  [(ngModel)]="selectedCard.newLimit">
+      </td>
+    </tr>
+    </tbody>
+  </table>
+  <div>
+    <button class="submit" [disabled]="" (click)="submit()">SUBMIT</button>
+  </div>
+  </form>
+</div>
+</div>

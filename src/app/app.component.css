@@ -1,0 +1,22 @@
+
+.basic{
+  text-align:center
+
+}
+.basic .title{
+  padding-top: 10px;
+  margin-bottom: 20px;
+  height: 50px;
+  width: 100%;
+  background: dimgrey;
+  color: snow;
+  font-size: 2em;
+  font-weight: bold;
+}
+.bottom{
+  height: 50px;
+  width: 100%;
+  background: dodgerblue;
+  position: fixed;
+  bottom: 0;
+}
